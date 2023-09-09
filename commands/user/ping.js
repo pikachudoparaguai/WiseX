@@ -5,6 +5,6 @@ module.exports = {
   
     // Função para executar o comando
     execute(message, args) {
-      message.reply(`🏓 Pong: \`${message.client.ws.ping}ms\``);
+      message.reply(`🏓 Pong: \`${message.client.ws.ping}ms\`!`);
     },
   };
