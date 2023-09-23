@@ -12,8 +12,8 @@ module.exports = {
   // Função para executar o comando
   async execute(message, client, args) {
     
-    const [existPrefix] = await db.query(`SELECT * FROM Prefixes WHERE serverId='${message.guild.id}'`);
-    const prefix = existPrefix?.[0]?.prefix || config.prefix;
+    const [existPrefix] = await db.query(`SELECT * FROM Prefixos WHERE serverId='${message.guild.id}'`);
+    const prefix = existPrefix?.[0]?.prefix || config.prefix
     const newPrefix = args.join(" ").trim();
 
     if (newPrefix.length > 4) {

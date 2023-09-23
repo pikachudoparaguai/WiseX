@@ -10,22 +10,22 @@ module.exports = {
     console.log(`Logged in as ${client.user.tag} \nServidores Total: ${client.guilds.cache.size}`);
     console.log('Bot is ready and online!');
 
-  setInterval(() => {
-  client.user.setActivity("bot ta on")
-}, 120000)
+    setInterval(() => {
+      client.user.setActivity("bot ta on")
+    }, 120000)
 
     /*const database = require('../database/index.js');
 
 
-           const Prefix = database.define('GlobalBan', {
-        
-          userId: {
-            type: Sequelize.STRING,
-          },
-          reason: {
-            type: Sequelize.STRING,
-          }
+    const serverIp = database.define('ServerIp', {
+      serverId: {
+        type: Sequelize.STRING,
+      },
+      Ip: {
+        type: Sequelize.STRING,
+      }
     })
-    Prefix.sync({ force: true })*/
+    serverIp.sync({ force: true })*/
+
   },
 };

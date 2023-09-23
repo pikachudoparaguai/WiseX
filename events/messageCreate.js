@@ -11,16 +11,16 @@ module.exports = {
     if (message.author.bot || message.channel.type === 'DM') return;
     
 
-    const [existPrefix] = await db.query(`SELECT * FROM Prefixes WHERE serverId='${message.guild.id}'`);
-    const prefix = existPrefix?.[0]?.prefix || config.prefix;
+    const [existPrefix] = await db.query(`SELECT * FROM Prefixos WHERE serverId='${message.guild.id}'`);
+    const prefix = existPrefix?.[0]?.prefix || config.prefix
 
-    const wasBanned = await db.query(`SELECT * FROM GlobalBans WHERE userId='${message.author.id}'`);
-    const bannedInfo = wasBanned[0]?.[0]; // Pega o primeiro elemento do primeiro array
+    // const wasBanned = await db.query(`SELECT * FROM GlobalBans WHERE userId='${message.author.id}'`);
+    // const bannedInfo = wasBanned[0]?.[0]; // Pega o primeiro elemento do primeiro array
     
-    if (bannedInfo) {
-      console.log('Usuário banido detectado:', message.author.id);
-      return message.reply('Você foi banido de utilizar o bot. Caso ache que isso foi um engano entre em contato no servidor de (suporte)[https://discord.gg/B5tFthfgDy]');
-    }
+    // if (bannedInfo) {
+    //   console.log('Usuário banido detectado:', message.author.id);
+    //   return message.reply('Você foi banido de utilizar o bot. Caso ache que isso foi um engano entre em contato no servidor de (suporte)[https://discord.gg/B5tFthfgDy]');
+    // }
 
     // Verifica se a mensagem foi enviada por um bot, para evitar respostas em cadeia
     if (message.author.bot) return;

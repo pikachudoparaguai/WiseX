@@ -10,8 +10,8 @@ module.exports = {
 
     async execute(message, client, args) {
 
-        const [existPrefix] = await db.query(`SELECT * FROM Prefixes WHERE serverId='${message.guild.id}'`);
-        const prefix = existPrefix?.[0]?.prefix || config.prefix;
+        const [existPrefix] = await db.query(`SELECT * FROM Prefixos WHERE serverId='${message.guild.id}'`);
+        const prefix = existPrefix?.[0]?.prefix || config.prefix
 
         if (!message.member.permissions.has(Permissions.FLAGS.MANAGE_NICKNAMES)) {
             return message.reply(`**${message.author}**, você não tem permissão para executar este comando.`);

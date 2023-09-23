@@ -13,8 +13,8 @@ module.exports = {
 
         if (!message.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return message.reply(`${message.author}, você não tem permissão para executar este comando.`)
 
-        const [existPrefix] = await db.query(`SELECT * FROM Prefixes WHERE serverId='${message.guild.id}'`);
-        const prefix = existPrefix?.[0]?.prefix || config.prefix;
+        const [existPrefix] = await db.query(`SELECT * FROM Prefixos WHERE serverId='${message.guild.id}'`);
+        const prefix = existPrefix?.[0]?.prefix || config.prefix
 
         let member = message.mentions.members.first();
         if (!member) return message.reply(`${message.author}, você deve informar o **usúario**. ${prefix}timeout @Usúario 28d Motivo **[Máximo 28 dias]**`)

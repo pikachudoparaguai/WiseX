@@ -5,7 +5,7 @@ const Prefix = database.define('Prefix', {
     serverId: {
         type: Sequelize.STRING,
     },
-    prefix: {
+    Prefix: {
         type: Sequelize.STRING,
     }
 })
