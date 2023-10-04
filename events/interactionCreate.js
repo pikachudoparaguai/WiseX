@@ -1,4 +1,4 @@
-const { MessageButton, MessageActionRow, Modal, TextInputComponent } = require('discord.js');
+const { MessageButton, MessageActionRow, Modal, TextInputComponent, MessageSelectMenu } = require('discord.js');
 
 module.exports = {
     name: 'interactionCreate',
@@ -54,22 +54,16 @@ module.exports = {
 
             if (interaction.customId.startsWith(`reprovar_player_button:`)) {
 
-                const whitelistAutoInteractionAprovar = require('../interactions/whitelist_modules/whitelist_Manual');
-                whitelistAutoInteractionAprovar(interaction, client)
+                const whitelistAutoInteractionReprovar = require('../interactions/whitelist_modules/whitelist_Manual');
+                whitelistAutoInteractionReprovar(interaction, client)
             }
 
             ////////////////////////////////////////////////////////////////////
 
-            if (interaction.customId.startsWith(`start_point`)) {
-                const baterPontoInteraction = require('../interactions/baterponto_modules/baterponto');
-                baterPontoInteraction(interaction, client)
-            }
+            if (interaction.customId.startsWith(`conf-wl-questions`)) {
 
-            ////////////////////////////////////////////////////////////////////
-
-            if (interaction.customId.startsWith(`finish_point`)) {
-                const baterPontoFinalInteraction = require('../interactions/baterponto_modules/baterponto');
-                baterPontoFinalInteraction(interaction, client)
+                const ConfigWlQuestionsButton = require('../interactions/config_modules/config_whitelist');
+                ConfigWlQuestionsButton(interaction, client)
             }
 
             return;
@@ -81,10 +75,16 @@ module.exports = {
 
         }
 
-        if (interaction.isSelectMenu()) { // Se for aqueles menu por seleção ponha aqui
+        if (interaction.isSelectMenu()) {
+            await interaction.deferUpdate();
 
-            await interaction.deferUpdate()
+            // Recupere o valor selecionado
+            const selectedValue = interaction.values[0];
 
+            if (selectedValue === 'conf-wl') {
+                const configWhitelist = require('../interactions/config_modules/config_whitelist');
+                configWhitelist(interaction, client);
+            }
         }
     },
 };

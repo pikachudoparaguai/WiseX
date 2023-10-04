@@ -14,18 +14,22 @@ module.exports = {
       client.user.setActivity("bot ta on")
     }, 120000)
 
-    /*const database = require('../database/index.js');
+    // const database = require('../database/index.js');
 
-
-    const serverIp = database.define('ServerIp', {
-      serverId: {
-        type: Sequelize.STRING,
-      },
-      Ip: {
-        type: Sequelize.STRING,
-      }
-    })
-    serverIp.sync({ force: true })*/
+    // const Whitelist = database.define('whitelist', {
+    //   serverId: {
+    //     type: Sequelize.STRING,
+    //   },
+    //   questions: {
+    //     type: Sequelize.JSON,
+    //     allowNull: false,
+    //   },
+    //   minimumToPass: {
+    //     type: Sequelize.STRING,
+    //     allowNull: false,
+    //   },
+    // })
+    // Whitelist.sync({ force: true })
 
   },
 };
