@@ -1,4 +1,9 @@
 {
-    "token": "NTEzNDU0MjYyODk0OTg1MjI5.G6TAD8.efnosehTJyDkNEKRvPKs-OeCwt28VV4ZjcnWh0",
-    "prefix": "!"
+    "token": "MTE3MjI3ODE4MTQ2Njc1MTAyNw.GPPl7_.vmlBCQ6jYNzQQM9nMxLkN0b_iM598TrTW0TPLU",
+    "prefix": "!",
+
+    "payment": {
+        "test": "TEST-405283998650507-112116-5065e186fb7af41a4e764fc666a409d2-1161605991",
+        "production": ""
+    }
 }
