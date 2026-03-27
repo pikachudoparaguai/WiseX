@@ -1,9 +1,9 @@
 {
-    "token": "",
+    "token": "DISCORD_BOT_TOKEN",
     "prefix": "!",
 
     "payment": {
-        "test": "",
+        "test": "PAYMENT_TOKEN_ID",
         "production": ""
     }
 }
